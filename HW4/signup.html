@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<!-- CSE 190 M Homework 4 (NerdLuv) -->
+	<!-- shared page top HTML -->
+
+	<head>
+		<title>NerdLuv</title>
+
+		<meta charset="utf-8" />
+
+		<!-- instructor-provided CSS and JavaScript links; do not modify -->
+		<link href="images/heart.gif" type="image/gif" rel="shortcut icon" />
+		<link href="css/nerdluv.css" type="text/css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<header>
+			<img src="images/nerdluv.png" alt="banner logo" /> <br />
+			where meek geeks meet
+        </header>
+        
+        <form action="submit">
+            <fieldset>
+                <legend>New User Signup:</legend>
+                <label for="name" class="left"><strong>Name:</strong></label>
+                <input type="text" name="name" maxlength="16"><br>
+                <label for="gender" class="left"><strong>Gender:</strong></label>
+                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="female" checked>Female</label>
+                <br>
+                <label class="left" ><strong>Age:</strong></label>
+                <input type="text" name="age" size="6"><br>
+                <label class="left"><strong>Personality Type:</strong></label>
+                <input type="text" name="type" size="6" maxlength="4">
+                (<a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a>)<br>
+                <label class="left"><strong>Favorite OS:</strong> </label>
+                <select name="os">
+                    <option selected>Windows</option>
+                    <option>Mac OS X</option>
+                    <option>Linux</option>
+                </select>
+                <br>
+                <label class="left"><Strong>Seeking age: </Strong></label>
+                <input type="text" name="min" max-length="2"size="6" placeholder="min">
+                <label>to</label>
+                <input type="text" name="max" max-length="2" size="6" placeholder="max"><br>
+            
+                <input type="submit" value="Sign Up">
+            </fieldset>
+            
+        </form>
+
+		<p>
+			This page is for single nerds to meet and date each other!  Type in your personal information and wait for the nerdly luv to begin!  Thank you for using our site.
+		</p>
+		<footer>
+			<hr />
+			<p>
+				Results and page (C) Copyright NerdLuv Inc.
+			</p>
+
+			<ul>
+				<li>
+					<a href="index.php">
+						<img src="images/back.gif" alt="icon" />
+						Back to front page
+					</a>
+				</li>
+			</ul>
+
+			<a href="http://validator.w3.org/check/referer">
+                <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
+                alt="html validator"/>
+                </a>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img class = "validator"src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
+                        alt="html validator"/>
+                </a>
+		</footer>
+	</body>
+</html>
