@@ -110,6 +110,11 @@ h1 {
     overflow: hidden;
 }
 
+.author{
+    font-size: 13px;
+    font-style: italic;
+}
+
 .leftContainer img {
     float: left;
     margin-right: 5px;
