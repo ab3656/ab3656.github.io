@@ -24,27 +24,27 @@
             <fieldset>
                 <legend>New User Signup:</legend>
                 <label class="left"><strong>Name:</strong></label>
-                <input type="text" name="name" maxlength="16"><br>
+                <input type="text" name="name" maxlength="16" required><br>
                 <label class="left"><strong>Gender:</strong></label>
                 <label><input type="radio" name="gender" value="male">Male</label>
                 <label><input type="radio" name="gender" value="female" checked>Female</label>
                 <br>
                 <label class="left" ><strong>Age:</strong></label>
-                <input type="text" name="age" size="6"><br>
+                <input type="text" name="age" size="6" required><br>
                 <label class="left"><strong>Personality Type:</strong></label>
-                <input type="text" name="type" size="6" maxlength="4">
+                <input type="text" name="type" size="6" maxlength="4" required>
                 (<a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a>)<br>
                 <label class="left"><strong>Favorite OS:</strong> </label>
-                <select name="os">
+                <select name="os" required>
                     <option selected>Windows</option>
                     <option>Mac OS X</option>
                     <option>Linux</option>
                 </select>
                 <br>
                 <label class="left"><Strong>Seeking age: </Strong></label>
-                <input type="text" name="min" size="6" maxlength="2" placeholder="min">
+                <input type="text" name="min" size="6" maxlength="2" placeholder="min" required>
                 <label>to</label>
-                <input type="text" name="max" size="6" maxlength="2" placeholder="max"><br>
+                <input type="text" name="max" size="6" maxlength="2" placeholder="max" required><br>
             
                 <input type="submit" value="Sign Up">
             </fieldset>
