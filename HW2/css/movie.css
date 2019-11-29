@@ -112,6 +112,10 @@ h1 {
 
 .author{
     font-size: 13px;
+    
+}
+
+.author .magazine {
     font-style: italic;
 }
 
