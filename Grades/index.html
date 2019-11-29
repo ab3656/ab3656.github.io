@@ -9,17 +9,17 @@
 <body>
     <h1>Retrieve your grade</h1>
     <form action="http://mumstudents.org/params.php">
-        <p>Name: <input type="text" name="name"></p>
-        <p>Student ID: <input type="text" name="studentid"></p> 
+        <p>Name: <input type="text" name="name" required></p>
+        <p>Student ID: <input type="text" name="studentid" required></p> 
         <p>Assignment:
-            <select>
+            <select required>
                 <option>HW1</option>
                 <option>HW2</option>
                 <option>HW3</option>
                 <option>HW4</option>
             </select>
         </p>
-        <p><label><input type="checkbox">Confirm that you're looking your own grades?</label></p>
+        <p><label><input type="checkbox" required>Confirm that you're looking your own grades?</label></p>
         <p>
             <label><input type="radio" name="entry">August 2019</label>
             <label><input type="radio" name="entry">May 2019</label>
