@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Servlet Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <dl>
+        <dt>What is the difference between a web server and a web container?</dt>
+        <dd>Web Container or Servlet Container are applications used to manage
+            the components like Servlets.It is a part of the web server.
+
+            Web Server is a server which is capable of handling
+            HTTP requests, sent by a client and responds back with a HTTP response.
+        </dd>
+        <dt>What is a servlet?</dt>
+        <dd>A servlet is a Java class that extends the capabilities of
+            servers that host applications access by means of a
+            request-response programming model.</dd>
+        <dt>How do web servers and web containers interact with servlets?
+        </dt>
+        <dd>When a HTTP request comes to the web server, it checks is the request
+            is for a servlet. If it is, it passes the request data to web/servlet
+            container. The servlet cntainer then locates the servlet, creates request
+            and response objects and passes them to the servlet and returns to the web
+            server the response created by the servlet. The web container then sends the
+            response back to the browser to be rendered.</dd>
+        <dt>Who creates request objects?</dt>
+        <Dd>Servlet/web container creates request objects.</Dd>
+        <dt>What are the states in the servlet lifecycle?</dt>
+        <dd>
+            <ol>
+                <li>Load servlet class</li>
+                <li>Instantiate servlet </li>
+                <li>initialize called only once in the servlet's life</li>
+                <li>service() (called for each request, each request runs in separate thread)</li>
+                <li>destroy() (called only once)</li>
+            </ol>
+        </dd>
+        <dt>Who calls init and when?</dt>
+        <Dd>Servlet container calls init only once in the servlet's life.
+        </Dd>
+        <Dt>Which of init, service, and doGet should you override?
+        </Dt>
+        <dd>doGet should be overridden. init possibly if we have initialization code
+        </dd>
+        <dt>In what sense are servlets multi-threaded?
+        </dt>
+        <Dd>Multiple requests to the same servlet can be executed at the same time which
+            means they are multi-threaded.
+        </Dd>
+        <dt>What are the implications of this for servlet instance variables?
+        </dt>
+        <dd>Although servlets are multithreaded, the container does not create
+            a new instance of the Servlet class for each request and
+            reuses an existing one. It means more than one thread can be accessing
+            the same instance variable at the same time. This is why they are not thread safe.</dd>
+    </dl>
+</body>
+
+</html>
