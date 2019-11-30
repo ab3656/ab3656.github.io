@@ -1,0 +1,46 @@
+1. What is the difference between a web server and a web container?
+	Web Container or Servlet Container are applications used to manage 
+	the components like Servlets.It is a part of the web server.
+
+	Web Server is a server which is capable of handling 
+	HTTP requests, sent by a client and responds back with a HTTP response.
+
+2. What is a servlet?
+	A servlet is a Java class that extends the capabilities of
+	servers that host applications access by means of a
+	request-response programming model. 
+	
+3. How do web servers and web containers interact with servlets?
+	When a HTTP request comes to the web server, it checks is the request 
+	is for a servlet. If it is, it passes the request data to web/servlet 
+	container. The servlet cntainer then locates the servlet, creates request
+	and response objects and passes them to the servlet and returns to the web
+	server the response created by the servlet. The web container then sends the
+	response back to the browser to be rendered.
+
+4. Who creates request objects?
+	Servlet/web container creates request objects.
+
+5. What are the states in the servlet lifecycle?
+	a. Load servlet class
+	b. Instantiate servlet 
+	c. initialize called only once in the servlet's life
+	d. service() (called for each request, each request runs in
+	a separate thread)
+	e. destroy() (called only once)
+	
+6. Who calls init and when?
+	Servlet container calls init only once in the servlet's life.
+	
+7. Which of init, service, and doGet should you override?
+	doGet should be overridden. init possibly if we have initialization code
+	
+8. In what sense are servlets multi-threaded?
+	Multiple requests to the same servlet can be executed at the same time which
+	means they are multi-threaded.
+	
+9. What are the implications of this for servlet instance variables?
+	Although servlets are multithreaded, the container does not create 
+	a new instance of the Servlet class for each request and
+	reuses an existing one. It means more than one thread can be accessing 
+	the same instance variable at the same time. This is why they are not thread safe.
