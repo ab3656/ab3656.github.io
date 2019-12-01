@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Servlet Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <dl>
+        <dt>Can post requests be bookmarked? What are the problems?</dt>
+        <dd>In the POST method the data is passed in the HTTP request body so it can't
+            be bookmarked because bookmarking only saves the URL and not the request body.
+        </dd>
+        <dt>What is the purpose of request dispatching?
+        </dt>
+        <dd>The purpose of request dispatching is to internally pass the requst processing
+            to another local resource or to tell the client browser to issue another http
+            request to a specified URL.
+        </dd>
+        <dt>What is the difference between redirect and request dispatch?
+        </dt>
+        <dd>
+            Request dispatch is used to pass the request to another resource for further processing within the same
+            server,
+            another resource could be any servlet, jsp page any kind of file.
+            Redirect is used to redirect client request to some other location for further processing ,the new location
+            is available on different server or different context
+            <br><br>
+            During request dispatch browser is completely unaware of servlet forward and hence the URL
+            in browser address bar will remain unchanged whereas
+            during redirect this request is visible in browser as a new request.
+            <br><br>Request dispatch is also called server side redirect whereas
+            redirect is called client side redirect.
+            <br><br>
+            With request dispatch, request and response
+            objects are passed to destination servlet whereas in redirect, only http message is sent.
+
+        </dd>
+        <dt>What is an attribute ?
+        </dt>
+        <dd>Attributes are name value pair objects bound into one of the three servlet API objects; HttpServletRequest, 
+            HttpSession, ServletContext</dd>
+        <dt>What is the difference between attributes and parameters?
+        </dt>
+        <dd>
+            Attributes are server variables that exists within a specified scope in application, session or requests
+            whereas parameters are string values passed from client to server. 
+            <br><br>
+            Attributes are set in a servlet for the same request and is accessible 
+            from JSP and can be any object including string. Parameters are set and passed
+            from client to server and can only return strings.
+        </dd>
+        <dt>What does it mean to say that http is stateless? Give an example of a stateful protocol.</dt>
+        <dd>
+                HTTP is a stateless protocol, which means that after a web
+                server responds to a request, there is no “memory” of the
+                request or who sent it. Every resource that is accessed via HTTP is a single 
+                request with no threaded connection between them.
+
+                FTP(File Transfer Protocol) is an example stateful protocol. It saves the status and 
+                session information. 
+        </dd>
+        <dt>Give 5 different methods for maintaining state information (count each attribute scope as one
+            method).</dt>
+        <dd>
+            <ol>
+                <li>request scope: destroyed when servlet finishes processing request </li>
+                <li>session scope: destroyed when user closes browser</li>
+                <li>application scope destroyed when Container stopped.</li>
+                <li>Cookies saved on browser, temporary or permanent</li>
+                <li>Hidden fields on a form</li>
+            </ol>
+        </dd>
+        <dt>How long does a session last?</dt>
+        <dd>Sessins last as long as the declared value of session-timeout in web.xml. 
+                getMaxInactiveInterval  method tells how long sessions last.</dd>
+        <dt>What is a cookie, and how long does a cookie last?</dt>
+        <dd>Temporary cookies are deleted when the browser is closed. 
+            Permanent cookies has a max age set so it lasts until that time.
+        </dd>
+        <dt>What is the purpose of URL rewriting?</dt>
+        <dd>URL rewriting helps alter the parameters in a URL.</dd>
+        <dt>Why does the request attribute report ‘null’ for the maintaining state demo?</dt>
+        <dd>If the server finishes processing request, the request attribute will report null.</dd>
+    </dl>
+</body>
+
+</html>
