@@ -8,81 +8,114 @@
 
 <body>
     <dl>
-        <dt>Can post requests be bookmarked? What are the problems?</dt>
-        <dd>In the POST method the data is passed in the HTTP request body so it can't
-            be bookmarked because bookmarking only saves the URL and not the request body.
+        <dt>What is the main value of Java Server Pages?</dt>
+        <dd>Java Server Pages helps to separate the display from the processing part i.e separate
+            html from java. JSP supports dynamic content and allows developers to
+            insert
         </dd>
-        <dt>What is the purpose of request dispatching?
+        <dt>How are JSP pages related to servlets?
         </dt>
-        <dd>The purpose of request dispatching is to internally pass the requst processing
-            to another local resource or to tell the client browser to issue another http
-            request to a specified URL.
+        <dd>When a browser requests a page with a .jsp file the container reads the request.
+            Using the JSP compiler, the container converts the JSP into a servlet class that
+            The JSP file is compiled only when the page is first requested, or when the JSP file has been changed.
+            Otherwise, the previously compiled JSP servlet class is re-used, making subsequent responses much quicker.
+            Finally, the generated JspPage servlet class is invoked to handle the browser request.
         </dd>
-        <dt>What is the difference between redirect and request dispatch?
+        <dt>How are JSP pages related to HTML?
         </dt>
         <dd>
-            Request dispatch is used to pass the request to another resource for further processing within the same
-            server,
-            another resource could be any servlet, jsp page any kind of file.
-            Redirect is used to redirect client request to some other location for further processing ,the new location
-            is available on different server or different context
-            <br><br>
-            During request dispatch browser is completely unaware of servlet forward and hence the URL
-            in browser address bar will remain unchanged whereas
-            during redirect this request is visible in browser as a new request.
-            <br><br>Request dispatch is also called server side redirect whereas
-            redirect is called client side redirect.
-            <br><br>
-            With request dispatch, request and response
-            objects are passed to destination servlet whereas in redirect, only http message is sent.
+            JSP pages can have plain html code embedded or generate dynamic
+            HTML code on the go.
+        </dd>
+        <dt>Give an example of a JSP scriptlet and show how it will look in the JSP servlet.
+        </dt>
+        <dd>Example of scriptlet:
+            <pre>
+                <% int x=10;
+                int y=40;
+                int z = x+y;
+                out.println("Sum of x and y is " + z);
+                %>
+            </pre>
+            The scriptlet above will be compiled to the following in JSP servlet:
+            <pre>
+                int x=10;
+                int y=40;
+                int z = x+y;
+                out.println("Sum of x and y is " + z);
+            </pre>
 
         </dd>
-        <dt>What is an attribute ?
+        <dt> Give an example of a JSP declaration and show how it will look in the JSP servlet
         </dt>
-        <dd>Attributes are name value pair objects bound into one of the three servlet API objects; HttpServletRequest, 
-            HttpSession, ServletContext</dd>
-        <dt>What is the difference between attributes and parameters?
-        </dt>
-        <dd>
-            Attributes are server variables that exists within a specified scope in application, session or requests
-            whereas parameters are string values passed from client to server. 
-            <br><br>
-            Attributes are set in a servlet for the same request and is accessible 
-            from JSP and can be any object including string. Parameters are set and passed
-            from client to server and can only return strings.
-        </dd>
-        <dt>What does it mean to say that http is stateless? Give an example of a stateful protocol.</dt>
-        <dd>
-                HTTP is a stateless protocol, which means that after a web
-                server responds to a request, there is no “memory” of the
-                request or who sent it. Every resource that is accessed via HTTP is a single 
-                request with no threaded connection between them.
+        <dd>Example of JSP declaration:
+            <pre>
+                <%! int count = 0; %>
+                </pre>
+            The declaration above will be compiled to the following in JSP servlet:
+            <pre>
+                int count = 0
+                </pre>
 
-                FTP(File Transfer Protocol) is an example stateful protocol. It saves the status and 
-                session information. 
         </dd>
-        <dt>Give 5 different methods for maintaining state information (count each attribute scope as one
-            method).</dt>
+        <dt>Give an example of a JSP comment and show how it will look in the JSP servlet. </dt>
+        <dd>Example of JSP Comment:
+            <pre>
+                <%-- This is Sparta!! --%>
+            </pre>
+            The comment above will be ignored in JSP servlet:
+
+        </dd>
+        <dt>Give an example of a JSP expression and show how it will look in the JSP servlet. </dt>
         <dd>
+            <pre>
+                <%= i*j+i %>
+            </pre>
+            The expression above will be compiled to the following in JSP servlet:
+            <pre>
+                out.print(i*j+i);
+            </pre>
+        </dd>
+        <dt>Give an example of a JSP directive and show how it will look in the JSP servlet.</dt>
+        <dd>
+            <pre>
+                <%@page import="mum.cs472.*" %>
+            </pre>
+            The directive above will be compiled to a proper import statement in the JSP servlet like:
+            <pre>
+                import mum.cs472.*
+            </pre>
+        </dd>
+        <dt>Explain how an EL expression is evaluated.
+        </dt>
+        <dd>
+            Expression -> ${variable} <br>
+            The container checks page scope for an attribute named variable, and if not found keeps on checking it
+            in request scope, session scope and application scope and if still not found,
+            it ignores the expression.
+        </dd>
+        <dt>Explain how servlet attributes are involved in EL expressions.</dt>
+        <dd>
+            Suppose the EL expression: ${sessionScope.name} is in the JSP page.
+            The EL expression will search for objects in servlet attributes in the following order
             <ol>
-                <li>request scope: destroyed when servlet finishes processing request </li>
-                <li>session scope: destroyed when user closes browser</li>
-                <li>application scope destroyed when Container stopped.</li>
-                <li>Cookies saved on browser, temporary or permanent</li>
-                <li>Hidden fields on a form</li>
+                <li>pageScope</li>
+                <li>requestScope</li>
+                <li>sessionScope</li>
+                <li>applicationScope</li>
             </ol>
+            If the expression is stored in session scope as follows:
+            <pre>
+            String name = "Ameet";
+            session.setAttribute("name", name);
+            </pre>
+            The EL expression ${sessionScope.name} will give us "Ameet"<div class=""></div>
+
         </dd>
-        <dt>How long does a session last?</dt>
-        <dd>Sessins last as long as the declared value of session-timeout in web.xml. 
-                getMaxInactiveInterval  method tells how long sessions last.</dd>
-        <dt>What is a cookie, and how long does a cookie last?</dt>
-        <dd>Temporary cookies are deleted when the browser is closed. 
-            Permanent cookies has a max age set so it lasts until that time.
+        <dt>Explain how servlets and JSPs use request dispatch to interact. </dt>
+        <dd>
+               Servlets and JSP use request dispatch to dispatches requests to other JSPs or servlets.
         </dd>
-        <dt>What is the purpose of URL rewriting?</dt>
-        <dd>URL rewriting helps alter the parameters in a URL.</dd>
-        <dt>Why does the request attribute report ‘null’ for the maintaining state demo?</dt>
-        <dd>If the server finishes processing request, the request attribute will report null.</dd>
     </dl>
 </body>
 
