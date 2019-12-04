@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Servlet Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <dl>
+        <dt>Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL
+            forEach.</dt>
+        <dd><img src="new.JPG" alt="new code">
+        </dd>
+        <dt>How do custom tags relate to JSTL?
+        </dt>
+        <dd>Custom tags are user defined JSTL actions. The purpose of custom tags is to creates custom functionality
+            that can be packaged and reused by content
+            developers using JSTL.
+        </dd>
+        <dt>What is the role of the URI in the TLD and the taglib directive?
+        </dt>
+        <dd>
+            The uri attribute value resolves to a location
+            the container understands and the prefix
+            attribute informs a container what bits of
+            markup are custom actions. URI directs the container to
+            locations of custom TLD and taglib directives.
+        </dd>
+        <dt>What is a tag handler class?
+
+        </dt>
+        <dd>Tag handler class are the classes where We have to define the tag and its actions. 
+            TagSupport is the base class used for simple tags. 
+            This class can be found in the javax.servlet.jsp.tagext package.</dd>
+        <dt>What is the role of attribute setters in a tag handler class?
+        </dt>
+        <dd>
+            Attribute setters help set attributes of tags such as various styles, colors etc.
+        </dd>
+        <dt>What is the role of the doTag() method in a tag handler class? </dt>
+        <dd>
+                doTag() method renders a custom tag to the view page. 
+        </dd>
+        <dt>Give 5 different methods for maintaining state information (count each attribute scope as one
+            method).</dt>
+        <dd>
+            <ol>
+                <li>request scope: destroyed when servlet finishes processing request </li>
+                <li>session scope: destroyed when user closes browser</li>
+                <li>application scope destroyed when Container stopped.</li>
+                <li>Cookies saved on browser, temporary or permanent</li>
+                <li>Hidden fields on a form</li>
+            </ol>
+        </dd>
+        <dt>What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in
+                a doTag() method? </dt>
+        <dd>It sets the tag value to "Hi Bob"</dd>
+        <dt>What does the operation getJspBody().invoke(null) do when called in a doTag()
+                method? </dt>
+        <dd>
+                When getJspBody().invoke(null) is called in a doTag(), it outputs result from 
+                the execution of the tag body that gets passed to the client
+        </dd>
+      </dl>
+</body>
+
+</html>
