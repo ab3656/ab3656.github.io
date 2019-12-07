@@ -35,3 +35,8 @@ fieldset {
     opacity: 70%;
     text-align: right;
 }
+
+.footer {
+    width: fit-content;
+    float: right;
+}
