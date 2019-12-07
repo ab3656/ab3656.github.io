@@ -9,10 +9,29 @@ h1 {
     margin: 0;
 }
 
-#animationText {
-    widows: 90%;
-    height: 400px;
+textarea {
+    width: 90%;
+    display: block;
     margin: auto;
+    height: 400px;    
     font-size: 12pt;
-    font-family: monospace;
+    font-family: monospace;  
+      
+}
+
+fieldset {
+    display: inline-block;
+    border: 5px solid black;
+    text-align: center;    
+}
+
+.fields {
+    width: fit-content;
+    margin: auto;
+}
+
+.footer a {
+    display: block;
+    opacity: 70%;
+    text-align: right;
 }

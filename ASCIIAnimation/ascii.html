@@ -9,29 +9,46 @@
 
     <body>
         <h1>CS 472: ASCII Animation Viewer</h1>
-    
+        
         <textarea rows="20" cols="80" id="animationText"></textarea>
-
+        
+        <div class="fields">
         <fieldset>
             <legend>Play Controls:</legend>
-            <button id="start" name="Start">Start</button>
-            <button id="stop" name="Stop" disabled>Stop</button>
+            <button id="start" name="Start" onclick="startAnimation();">Start</button>
+            <button id="stop" name="Stop" onclick="stopAnimation();">Stop</button>
         </fieldset>
         <fieldset>
             <legend>Animation:</legend>
-            <select>
+            <select id="animation" onchange="setAnimation();">
                 <option>Bike</option>
                 <option>Exercise</option>
                 <option>Juggler</option>
                 <option>Dive</option>
                 <option>Bike</option>
+                <option selected>Blank</option>
             </select>
         </fieldset>
         <fieldset>
             <legend>Size:</legend>
+            <select onchange="selectSize();">
+                <option>Tiny</option>
+                <option>Small</option>
+                <option selected>Medium</option>
+                <option>Large</option>
+                <option>Extra Large</option>
+                <option>XXL</option>
+            </select>
         </fieldset>
         <fieldset>
             <legend>Speed:</legend>
+            <label><input type="checkbox" id="speed" onchange="selectSpeed();"/>Turbo</label>
         </fieldset>
+    </div>
+    <div class="footer">
+        <a href="http://validator.w3.org/check/referer"><img src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png" alt="html validator"/></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png" alt="css validator"/></a>
+        <a href="http://mumstudents.org/jscheck/referer.php"><img src="http://mumstudents.org/jscheck/jscheck-small.png" alt="js validator"/></a>
+    </div>
     </body>
 </html>
