@@ -6,33 +6,32 @@ function Account(name, deposit) {
     this.deposit = deposit;
 }
 
-function eventHandler() {
-    
-    var acc = function() {
-        var account = "";
-        var deposit = "";
-        
-        return {
-            createAccount: function() {
-                
-                this.account = document.getElementById("accountName").value;
-                this.deposit = document.getElementById("deposit").value;
-                var det = "";
-                var acco = new Account(account, deposit);
-                accountInfoList.push(acco);
-                for(account in accountInfoList) {
-                    det += account.name + " " + account.amount
-                }  
-                document.getElementById("details").value = det;             
-            }
-        };        
-    };    
+function eventHandler() {      
     var create = document.getElementById("createNewAccount");
-    var acc1 = acc();
-    create.onclick = acc1.createAccount;
-    
-    
-    
+    var myFunc = acc();
+    create.onclick = myFunc.createAccount;   
 }
+
+var acc = function() {
+    var account = "";
+    var deposit = "";    
+    
+    return {
+        createAccount: function() { 
+            var details = "";               
+            this.account = document.getElementById("accountName").value;
+            this.deposit = document.getElementById("deposit").value;
+            let account = new Account();
+            account.name = this.account;
+            account.deposit = this.deposit;
+            accountInfoList.push(account);                
+            for(let i = 0; i < accountInfoList.length; i++) {
+                details += "Account name: " + accountInfoList[i].name + " Balance: " + accountInfoList[i].deposit + "\n";
+            }  
+            
+            document.getElementById("details").value = details;             
+        }
+    };        
+};    
 
 
