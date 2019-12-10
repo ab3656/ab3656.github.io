@@ -1,31 +1,38 @@
-window.onload = dashboard();
+window.onload = eventHandler;
 var accountInfoList = [];
-var account = {
-    name: 'name',
-    deposit: 10000
-};
 
-function dashboard() {
+function Account(name, deposit) {
+    this.name = name;
+    this.deposit = deposit;
+}
+
+function eventHandler() {
+    
+    var acc = function() {
+        var account = "";
+        var deposit = "";
+        
+        return {
+            createAccount: function() {
+                
+                this.account = document.getElementById("accountName").value;
+                this.deposit = document.getElementById("deposit").value;
+                var det = "";
+                var acco = new Account(account, deposit);
+                accountInfoList.push(acco);
+                for(account in accountInfoList) {
+                    det += account.name + " " + account.amount
+                }  
+                document.getElementById("details").value = det;             
+            }
+        };        
+    };    
     var create = document.getElementById("createNewAccount");
-
-    create.onclick = callAccountModule;
+    var acc1 = acc();
+    create.onclick = acc1.createAccount;
+    
+    
     
 }
 
-(function callAccountModule() {
-    var account;
-    var deposit;
-    
-    function retrieveAccount(){
-        account = document.getElementById("accountName");
-        deposit = document.getElementById("deposit");
-        accountInfoList.push(new account(name, deposit));
-    }
 
-    retrieveAccount();
-    var details = "";
-    for(account in accountInfoList) {
-        details+= "Account name: " + account.name + " " + "Balance: " + account.balance + "/n";
-    }
-    document.getElementById("details").value = details;
-})();
