@@ -1,4 +1,3 @@
-window.onload = rudyTimer;
 
 var timer = null; // stores ID of interval timer
 
