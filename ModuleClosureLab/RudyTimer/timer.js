@@ -1,7 +1,5 @@
-
-var timer = null; // stores ID of interval timer
-
 var rudyTimer = (function (){
+    var timer = null; // stores ID of interval timer
     if (timer === null) {
         timer = setInterval(rudy, 1000);
     } else {
