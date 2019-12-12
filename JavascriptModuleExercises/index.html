@@ -32,7 +32,7 @@
         </pre>
         </dt>
         <dd>
-            10 8 8 9 10 1
+            Output: 10 8 8 9 10 1
         </dd>
         <dt>Define Global Scope and Local Scope in Javascript.
         </dt>
@@ -86,26 +86,26 @@
             </code>
 
         </dt>
-        <dd>81 and 25
+        <dd>Output: 81 and 25
 
         </dd>
         <dt>
             <code>
-                <pre>
-                var foo = 1;
-                function bar() {
-                    if (!foo) {
-                        var foo = 10;
-                    }
-                    alert(foo);
-                }
-                bar();
+            <pre>
+var foo = 1;
+function bar() {
+    if (!foo) {
+        var foo = 10;
+    }
+    alert(foo);
+}
+bar();
             </pre>
             </code>
             What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?
         </dt>
         <dd>
-            10
+            Output: 10
         </dd>
         <dt>
             Consider the following definition of an add( ) function to increment a counter variable:
@@ -126,73 +126,350 @@
 
         </dt>
         <dd>
-            It refers to the object x
+            <code>
+                <pre>
+                var count = (function () {
+                    var counter = 0;
+                    let add = function(){
+                        counter +=1;
+                    }
+                    let reset = function(){
+                        counter = 0;
+                    }
+
+                    return {
+                        add: add,
+                        reset: reset
+                    };           
+                })();
+                </pre>
+            </code>
+
         </dd>
-        <dt>What is a free variable in JavaScript?
+        <dt>In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a function
+            closure,
+            what is a "free" variable?
         </dt>
         <dd>
-            Free variable is a variable referred to by a function that is
+            In add() the function return uses counter which is not a local variable inside of the return
+            function, thus counter is the free variable. Free variable in the context of function closure is a variable
+            referred to by a function that is
             not one of its parameters or local variables.
         </dd>
         <dt>
-            Create an object that has properties with name = "fred" and major="music" and a property that is a function
-            that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+            The add() function defined in question 6 always adds 1 to the counter each time it is called. Write a
+            definition
+            of a function make_adder(inc), whose return value is an add function with increment value inc (instead of
+            1). Here is an example of using this function:
+            <pre>
+            add5 = make_adder(5);
+            add5( ); add5( ); add5( ); // final counter value is 15
+            add7 = make_adder(7);
+            add7( ); add7( ); add7( ); // final counter value is 21
+            </pre>
         </dt>
         <dd>
+            Answer:
             <pre>
-               var obj = {
-                   name: "fred",
-                   major: "music",
-                   myFunc: function(x,y){
-                        return x>y?y:(x&lt;y?x:x*y)
-                   }
-               }
+            var make_adder = (function (inc) {
+            var counter = 0;
+            let add = function(){
+                counter +=inc;
+            }
+            return {
+                add: add                                                 
+            };           
+            });
            </pre>
         </dd>
-        <dt>Write Javascript code for creating three Employee objects using the "new" keyword and a constructor
-            function.
-            Employee objects have the following fields: name, salary, position.
+        <dt> Suppose you are given a file of Javascript code containing a list of many function and variable
+            declarations. All of these function and variable names will be added to the Global Javascript namespace.
+            What simple modification
+            to the Javascript file can remove all the names from the Global namespace?
 
         </dt>
         <dd>
-            <pre>
-                function Employee(name, salary, position) {
-                    this.name = name;
-                    this.salary = salary;
-                    this.position = position;
-                }
-
-                var john = new Employee("John", 10000, "Manager");
-                var eric = new Employee("eric", 10500, "Staff");
-                var rock = new Employee("Rock", 50000, "WWE Champion");
-            </pre>
+            => Use of module pattern.
         </dd>
-        <dt>Write a Javascript function that takes any number of input arguments and returns the product of the
-            arguments.
+        <dt>
+            Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an Employee
+            Object
+            with the following fields and methods:
+            <pre>
+        Private Field: name
+        Private Field: age
+        Private Field: salary
+        Public Method: setAge(newAge)
+        Public Method: setSalary(newSalary)
+        Public Method: setName(newName)
+        Private Method: getAge( )
+        Private Method: getSalary( )
+        Private Method: getName( )
+        Public Method: increaseSalary(percentage) // uses private getSalary( )
+        Public Method: incrementAge( ) // uses private getAge( )
+        </pre>
         </dt>
         <dd>
+            Answer:
             <code>
-                function product(a,b, ...more) {
-                var total = a * b;
-                if(more.length > 0) {
-                for(var i=0; i&lt;more.length; i++){
-                total *=more[i];
-                }
-                }
-                console.log(total);
-                }
+                <pre>
+                var employee = (function(){
+                var name;
+                var age;
+                var salary;
+
+                let setAge = function(newAge) {
+                age = newAge;
+                };
+
+                let setSalary = function(newSalary) {
+                salary = newSalary;
+                };
+
+                let setName = function(newName) {
+                name = newName;
+                };
+
+                let getAge = function(){
+                return age;
+                };
+
+                let getSalary = function(){
+                return salary;
+                };
+
+                let getName = function(){
+                return name;
+                };
+
+                let increaseSalary = function(percentage) {
+                    var salary = this.getSalary();
+                    salary = salary + salary*percentage/100
+                    this.salary = salary;
+                };
+
+                let incrementAge = function() {
+                    var age = this.getAge();
+                    age +=1;
+                    this.age = age;
+                };
+
+                return {
+                    setAge: setAge,
+                    setSalary: setSalary,
+                    setName: setName,
+                    increaseSalary: increaseSalary,
+                    incrementAge: incrementAge
+                    };
+                })();
+            </pre>
             </code>
         </dd>
-        <dt>Write an arrow function that returns the maximum of its three input arguments.</dt>
+        <dt>Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern</dt>
         <dd>
             <code>
                 <pre>
-            var max = (num1, num2, num3) => Math.max(num1, num2, num3)
-            var output = max(1,2,3);
+            var employee = (function(){
+            var name;
+            var age;
+            var salary;
+           
+            let getAge = function(){
+                return age;
+            };
+
+            let getSalary = function(){
+                return salary;
+            };
+
+            let getName = function(){
+                return name;
+            };
+
+            return {
+                setAge: function(newAge) {
+                    age = newAge;
+                },
+                setSalary: function(newSalary) {
+                    salary = newSalary;
+                },
+                setName: function(newName) {
+                    name = newName;
+                },
+                increaseSalary: function(percentage) {
+                    var salary = this.getSalary();
+                    salary = salary + salary*percentage/100  
+                    this.salary = salary;
+                },
+                incrementAge: function() {
+                    var age = this.getAge();
+                    age +=1;  
+                    this.age = age;
+                }
+            };
+        })();
             </pre>
             </code>
         </dd>
-    </dl>
+        <dt>Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern./dt>
+        <dd>
+            <code>
+                <pre>
+                    var employee = (function(){
+                    var name;
+                    var age;
+                    var salary;
+                    let employeeObject = {};
+                   
+                    let getAge = function(){
+                        return age;
+                    };
+
+                    let getSalary = function(){
+                        return salary;
+                    };
+
+                    let getName = function(){
+                        return name;
+                    };
+
+                    employeeObject.setAge = function(newAge) {
+                        age = newAge;
+                    };
+
+                    employeeObject.setAge = function(newSalary) {
+                        salary = newSalary;
+                    };
+
+                    employeeObject.increaseSalary = function(percentage) {
+                        var salary = this.getSalary();
+                        salary = salary + salary*percentage/100  
+                        this.salary = salary;
+                    };
+
+                    employeeObject.incrementAge = function() {
+                        var age = this.getAge();
+                        age +=1;  
+                        this.age = age;
+                    };
+
+                    return employeeObject;
+                })();            
+                    </pre>
+            </code>
+        </dd>
+        <dt>Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
+            public methods setAddress(newAddress) and getAddress( ).</dt>
+            <dd>
+                <code>
+                    <pre>                            
+                    var employee = (function(){
+                    var name;
+                    var age;
+                    var salary;
+                    var employee;
+                    let setAge = function(newAge) {
+                    age = newAge;
+                    };
+    
+                    let setSalary = function(newSalary) {
+                    salary = newSalary;
+                    };
+    
+                    let setName = function(newName) {
+                    name = newName;
+                    };
+    
+                    let getAge = function(){
+                    return age;
+                    };
+    
+                    let getSalary = function(){
+                    return salary;
+                    };
+    
+                    let getName = function(){
+                    return name;
+                    };
+    
+                    let increaseSalary = function(percentage) {
+                        var salary = this.getSalary();
+                        salary = salary + salary*percentage/100
+                        this.salary = salary;
+                    };
+    
+                    let incrementAge = function() {
+                        var age = this.getAge();
+                        age +=1;
+                        this.age = age;
+                    };
+    
+                    return {
+                        setAge: setAge,
+                        setSalary: setSalary,
+                        setName: setName,
+                        increaseSalary: increaseSalary,
+                        incrementAge: incrementAge
+                        };
+                    })(); 
+                    employee.getAddress = function() {
+                        return address;
+                    }
+                    employee.setAddress = function(newAddress) {
+                        this.address = newAddress;
+                    }
+                    </pre>
+                </code>
+            </dd>
+            <dt> What is the output of the following code?
+                <pre>
+                    const promise = new Promise((resolve, reject) => {
+                    reject(“Hattori”);
+                    });
+                    promise.then(val => alert(“Success: “ + val))
+                     .catch(e => alert(“Error: “ + e));
+                </pre>
+            </dt>
+            <dd>Error: Hattori</dd>
+
+            <dt> What is the output of the following code?
+                    <pre>
+                    const promise = new Promise((resolve, reject) => {
+                    resolve(“Hattori”);
+                    setTimeout(()=> reject(“Yoshi”), 500);
+                    });
+                    promise.then(val => alert(“Success: “ + val))
+                    .catch(e => alert(“Error: “ + e));
+                    </pre>
+                </dt>
+                <dd>Success: Hattori</dd>
+    
+            <dt>
+                What is the output of the following code?
+                    
+                <pre>
+                    function job(state) {
+                     return new Promise(function(resolve, reject) {
+                     if (state) {
+                     resolve('success');
+                     } else {
+                     reject('error');
+                     }
+                     });
+                    }
+                    let promise = job(true);
+                    promise.then(function(data) {
+                     console.log(data);
+                     return job(false);})
+                     .catch(function(error) {
+                     console.log(error);
+                     return 'Error caught';
+                    });
+                </pre>
+            </dt>
+            <dd>"success"
+                "error"</dd>
+            </dl>
 </body>
 
 </html>
