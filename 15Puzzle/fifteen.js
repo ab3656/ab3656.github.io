@@ -75,7 +75,7 @@ function shuffle() {
 }
 
 function canMove(position) {
-    var emptySpace = [move(xpos, ypos, 1), move(xpos, ypos, 2), move(xpos, ypos, 3), move(xpos, ypos, 4)]
+    var emptySpace = [move(xpos, ypos, 1), move(xpos, ypos, 2), move(xpos, ypos, 3), move(xpos, ypos, 4)];
     if (emptySpace.includes(position - 1)) {
         return true;
     }
