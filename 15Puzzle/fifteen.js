@@ -143,6 +143,6 @@ function swap(position) {
     gamePiece[position].style.top = ypos;
     ypos = temp;
     temp = gamePiece[position].style.left;
-    gamePiece[position].style.left = xpos        ;
-    xpos        = temp;
+    gamePiece[position].style.left = xpos;
+    xpos = temp;
 }

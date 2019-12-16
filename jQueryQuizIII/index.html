@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery Quiz I</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <ol>
+
+        <li>
+            Answer:
+            <pre>
+                $(function(){
+                    var first = $("p:first-child").text();
+                    $("p:nth-child(2)").text(first);
+                })
+            </pre>
+        </li>
+        <li>
+            Answer:
+            <pre>
+                $(function(){
+                    var first = $(".level-2 > li");
+                    first.css("color","red");
+                    var second = $(".level-3 > li");
+                    second.css("color","black");
+                })    
+            </pre>
+        </li>
+        <li>
+            Answer:
+            <pre>
+                $(function(){
+                    $(".third-item").prev().css("color","blue");
+                })  
+            </pre>
+        </li>
+        <li>
+            Answer:
+            <pre>
+                $(function(){
+                    $(.turkey).replaceWith("&lt;li class="mashed-potatoes"&gt;Mashed Potatoes&lt;/li&gt;");
+                })    
+            </pre>
+        </li>
+        <li>
+            Answer:
+            <pre>
+                $(function(){
+                    $("span").parent().css("color","green");
+                    $("span").parent().parent().css("color","green");
+                });  
+            </pre>
+        </li>
+
+    </ol>
+</body>
+
+</html>
