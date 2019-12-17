@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e6a271-25fd-4051-bcc5-6f78249e0df2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,10 +45,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/json-simple-1.1.1.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -55,6 +58,18 @@
       <recent name="C:\Users\610514\OneDrive - Maharishi University of Management\CS472\OnlineDictionary\web\assets\css" />
       <recent name="C:\Users\610514\OneDrive - Maharishi University of Management\CS472\OnlineDictionary\web\assets" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="GlassFish Server.GlassFish 5.0.0">
     <configuration name="DbConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -89,6 +104,21 @@
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="9009" />
       </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -117,28 +147,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="GlassFish Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="GlassFish Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -150,6 +158,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576525288892</updated>
       <workItem from="1576525292174" duration="4694000" />
+      <workItem from="1576542170729" duration="14385000" />
     </task>
     <servers />
   </component>
@@ -161,38 +170,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="676" y="47" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1576525440696" />
-    <state width="689" height="178" key="GridCell.Tab.0.bottom" timestamp="1576529397926">
+    <state width="503" height="178" key="GridCell.Tab.0.bottom" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="689" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576529397926" />
-    <state width="689" height="178" key="GridCell.Tab.0.center" timestamp="1576529397926">
+    <state width="503" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.0.center" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="689" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576529397926" />
-    <state width="689" height="178" key="GridCell.Tab.0.left" timestamp="1576529397926">
+    <state width="503" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.0.left" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="689" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576529397926" />
-    <state width="689" height="178" key="GridCell.Tab.0.right" timestamp="1576529397926">
+    <state width="503" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.0.right" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="689" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576529397926" />
-    <state width="461" height="178" key="GridCell.Tab.1.bottom" timestamp="1576529392749">
+    <state width="503" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.1.bottom" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="461" height="178" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576529392749" />
-    <state width="461" height="178" key="GridCell.Tab.1.center" timestamp="1576529392749">
+    <state width="503" height="178" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.1.center" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="461" height="178" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576529392749" />
-    <state width="461" height="178" key="GridCell.Tab.1.left" timestamp="1576529392749">
+    <state width="503" height="178" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.1.left" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="461" height="178" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576529392749" />
-    <state width="461" height="178" key="GridCell.Tab.1.right" timestamp="1576529392749">
+    <state width="503" height="178" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
+    <state width="503" height="178" key="GridCell.Tab.1.right" timestamp="1576530109404">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="461" height="178" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576529392749" />
+    <state width="503" height="178" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576530109404" />
     <state x="326" y="0" key="SettingsEditor" timestamp="1576525795389">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
